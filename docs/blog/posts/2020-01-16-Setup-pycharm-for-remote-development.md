@@ -1,11 +1,11 @@
 ---
-layout: post
 title:  "Setup pycharm for remote development"
 excerpt: Setup pycharm for remote development
-date:   2020-01-16 15:19:37 -0400
+date:   2020-01-16
 categories: welcome
 ---
 
+## Setup-pycharm-for-remote-development
 If you are like me who does  Machine Learning  using a think client laptop then this post might serve you.   I  use  my MacBook Pro 2015 to do most of the coding/debugging and  data exploration. While, all the  heavy computation happens on  GPUs in the remote server.  Ideally,  I wanted a platform with both remote folder mounting or explorer options with a decent IDE that support python programming.  I started with Spyder IDE  because of its simplicity. Besides,  it also has a good  support for visualization of  native python data types and some advanced data types like numpy and  pandas arrays. But, Spyder's debugging it still not that user friendly. I also tried VSCode editor after  installing the  "remote-SSH" extension from their applications marketplace. It was easy to setup but the fact that it was abruptly  closing SSH sessions and  asked to restart the editor constantly  frustrated me. Not to mention, the debugger was still not that advanced in VSCode too.
 
 Pycharm is a relatively well built IDE for python programming.  Also, I found that their debugging experience is much better than  other python IDEs. I recently found out that they also had support for remote programming. I decided to try it and so far I have found it to be reasonably good. Here, I want to share my steps for setting it up in Pycharm.
