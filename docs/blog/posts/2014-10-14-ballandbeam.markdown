@@ -1,7 +1,7 @@
 ---
 draft: true 
 date: 2023-01-31 
-slug: hello-world
+slug: ball-beam
 categories:
   - Hello
   - World
@@ -12,6 +12,7 @@ tags:
 
 
 # ball and beam system
+
 This project is a "ball and/On Beam" system.So this project is basically a PID controlled system where you
 have a linear beam or 1D surface ( can be extended to a plane /2D) and you have to balance a ball that is
 in motion at any position of the beam desired by the user.Now there are various methods to give that "desired position"
