@@ -1,11 +1,13 @@
 ---
-layout: post
-title:  "ball and beam system"
-excerpt: ball and beam system with real-time image processing
-comments: true
-date:   2014-10-14 19:26:37 +0545
-categories: hardware 
+draft: true 
+date: 2014-10-14 
+slug: hello-world
+categories:
+  - embedded
+tags:
+  - template
 ---
+
 
 This project is a "ball and/On Beam" system.So this project is basically a PID controlled system where you
 have a linear beam or 1D surface ( can be extended to a plane /2D) and you have to balance a ball that is
