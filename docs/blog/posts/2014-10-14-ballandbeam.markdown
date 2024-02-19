@@ -11,7 +11,7 @@ tags:
 ---
 
 
-# ball and beam system
+# Ball and Beam System
 
 This project is a "ball and/On Beam" system.So this project is basically a PID controlled system where you
 have a linear beam or 1D surface ( can be extended to a plane /2D) and you have to balance a ball that is
