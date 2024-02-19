@@ -1,12 +1,14 @@
 ---
 draft: true 
-date: 2014-10-14 
+date: 2014-10-14
 slug: hello-world
 categories:
-  - embedded
+  - Hello
+  - World
 tags:
   - template
----
+  - how-to
+--
 
 
 This project is a "ball and/On Beam" system.So this project is basically a PID controlled system where you
