@@ -36,14 +36,6 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks 
-    #- autolinks 
-  - exclude:
-      glob:
-        - "*.tmp"
-        - "*.pdf"
-        - "*.gz"
-      regex:
-        - '.*\.(tmp|bin|tar)$'
 
 extra_javascript:
   - javascripts/mathjax.js
