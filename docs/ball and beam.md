@@ -11,35 +11,24 @@ share: true
 ---
 # Ball and Beam System
 
-This project is a "ball and/On Beam" system.So this project is basically a PID controlled system where you
-have a linear beam or 1D surface ( can be extended to a plane /2D) and you have to balance a ball that is
-in motion at any position of the beam desired by the user.Now there are various methods to give that "desired position"
-some use potentiometer converted to a distance (by doing ADC mapping) etc. We used a simple hand gesture to set the ball's
-position on the beam which is found out using image processing. We take a colored ball and using HSV threshold and 
-some "moments" calculation we find the center of the ball.
+The "Ball on Beam" project is a PID-controlled system designed to achieve precise control and balance of a ball moving along a linear beam. Previous methods use   potentiometer to set the  desired position. Instead, we use hand gesture to set the ball's position on the beam.  We use simple image processing techniques such as HSV thresholding to isolate the ball and OpenCV's  "moments" to calculate the center of the ball. Similarly, we use Hough Transform to compute the setpoint from the hand pose.
 
+![png](https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/ballbeam/thr.png)
 
-
-![png](/assets/ballbeam/thr.png)
-
-![png](/assets/ballbeam/2.png)
+![png](https://raw.githubusercontent.com/manoja328/manoja328.github.io/master/assets/ballbeam/2.png)
 
 
 My setup had following things:
-
   1. A laptop with webcam
-  2. A PIC microcontroller (PIC16f877a)
+  2. A PIC microcontroller (PIC16f877A)
   3. A USB to Serial module
-  4. A ball and beam setup.
+  4. A home-made ball and beam setup attached to a Servo motor
   
-I actually implemented this algorithm in my laptop using a python script which you can find at the end of the the post
-The beam is a cheap wire-cover having a little groove enouhg for a round tennis ball to move in a straight path. 
-It is attached to a fixed support and is moved about the mean position with a Servo motor attached to it.
-The servo is controlled by a PIC microcontroller and the extent of movement is actually send from my
-laptop to PIC serially via a USB-Serial module .The data sent from PC is the angle with which the servo has 
-to move, which is determined by calculating the position of ball and  the setpoint. PID control is used for providing
-control feedback to the whole system. All the PIC does is change that angle into appropriate electrical signal to drive
-the servo meter.
+I implemented  the control logic using a Python script, which can be found at the end of this post. The purpose of the algorithm is to control the movement of a tennis ball along a beam. which is a low-cost wire cover with a groove that allows the ball to move in a straight path. The beam is attached to a fixed support and is manipulated by a servo motor. The servo motor is controlled by a PIC microcontroller, and the extent of movement is communicated from my laptop to the PIC via a USB-Serial module.
+
+The data sent from the laptop to the PIC microcontroller is the desired angle at which the servo motor should move. This angle is calculated based on the position of the ball and the desired setpoint. To achieve precise control over the system, a proportional-integral-derivative (PID) control algorithm is employed. The PID controller provides feedback to the entire system, allowing for adjustments and corrections in real-time.
+
+In summary, the Python script on my laptop calculates the desired angle for the servo motor based on the ball's position and setpoint. This information is then transmitted to the PIC microcontroller via a USB-Serial module, which converts it into an appropriate electrical signal to drive the servo motor. The PID control algorithm ensures accurate control and feedback for the system. If you would like to see the specific details of the Python script, please refer to the code and the video provided below.
 
 [Video link](https://www.youtube.com/watch?v=cayVlMbv05g&feature=youtu.be%20)
 
