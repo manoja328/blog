@@ -1,5 +1,5 @@
 ---
-date: 2023-01-31
+date: 2012-09-30
 slug: ball-beam
 categories:
   - Hello
