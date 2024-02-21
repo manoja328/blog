@@ -1,6 +1,7 @@
 site_name: blog
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.expand 
     - tabs
