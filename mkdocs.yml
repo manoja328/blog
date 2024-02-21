@@ -3,7 +3,8 @@ theme:
   name: material
   features:
     - navigation.expand 
-    - tabs 
+    - tabs
+    - navigation.tabs.sticky
 markdown_extensions: 
   - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
   - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
