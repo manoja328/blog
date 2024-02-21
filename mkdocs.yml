@@ -2,9 +2,13 @@ site_name: blog
 theme:
   name: material
   features:
-    - navigation.expand 
-    - tabs
-    - navigation.tabs.sticky
+      - navigation.indexes
+      - navigation.top
+      - navigation.tabs
+      - navigation.tabs.sticky
+      - navigation.expand
+      - search.suggest
+      - search.highlight
 markdown_extensions: 
   - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
   - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
