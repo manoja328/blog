@@ -1,9 +1,12 @@
 ---
 layout: post
 title: Debugging your ML models
-excerpt: debugging ML models
 comments: true
 date: 2020-5-10 18:02:00 +0545
+links.mdlinks: true
+links.convert: true
+links.internals: false
+links.nonShared: false
 categories:
   - ML
 share: true
@@ -11,32 +14,33 @@ share: true
 # Helpful tips to debug ML systems
 
 1. Always check your data
-   - Visualize outputs/labels  and the  inputs
-   - Visualize the data distribution and try to find patterns
-   - May also try if simple methods like  Kernel SVM , Random Forest work reasonably. If not then some problem with the dataset
-   - Duplicated examples , bad data , corrupted labels
-   - Do you need to do Data processing ?
-     - Mean centering , Whitening etc.
-   - Look for dataset imbalance and biases
-     - Up-sample or Down-sample if you see imbalance
-2. Start by overfitting on few samples by turning the regularization off. If the loss doesnot converge to zero then there  might be a problem.
-3. Start with simple model then gradually increase model complexity.
-4. Is the model underfitting or overfitting?  Simple checks can be done using k-Fold cross validation and seeing train and val losses. Run on small version or mini-validation data especially if you are running huge datasets. Use Tensorboard or other solutions to visualize the  losses.
+	- Visualize outputs/labels  and the  inputs
+	- Visualize the data distribution and try to find patterns
+	- May also try if simple methods like  Kernel SVM , Random Forest work reasonably. If not then some problem with the dataset
+	- Duplicated examples , bad data , corrupted labels
+	- Do you need to do Data processing ?
+		- Mean centering , Whitening etc.
+	- Look for dataset imbalance and biases
+		- Up-sample or Down-sample if you see imbalance
+1. Start by overfitting on few samples by turning the regularization off. If the loss doesnot converge to zero then there  might be a problem.
+2. Start with simple model then gradually increase model complexity.
+3. Is the model underfitting or overfitting?  Simple checks can be done using k-Fold cross validation and seeing train and val losses. Run on small version or mini-validation data especially if you are running huge datasets. Use Tensorboard, weight&biases or other solutions to visualize the  losses.
    - Underfitting: both train and test errors are high. Solutions:
-     1. Increase model complexity
+	   - Increase model complexity
    - Overfitting: train error low but test error high. Solutions:
-     1. Collect more data
-     2. Decrease model complexity eg. fewer units, reduce no. of  hidden layers
-     3. Regularize:
+     - Collect more data
+     - Decrease model complexity eg. fewer units, reduce no. of  hidden layers
+     - Regularize:
         - Dropout 
         - Batchnorm 
         - Early stopping 
         - L2 weight decay
         - Ensemble
-5. See that scales of losses are OK
+4. See that scales of losses are OK
    - check for anomaly in gradient values
      -  If you find that gradient are blowing-up then you can perform gradient clipping.
-   - check if there are `NaNs `or `Infs` or really weird values. Below, I describe a scenario that I faced. I was getting  NaNs  while running a Faster-RCNN model. I checked all the losses and found that my loss for classification was fine. But, I was getting NaNs just for co-ordinate regressors. Upon digging deep I find that  something like below could be happening:
+   - check if there are `NaNs `or `Infs` or really weird values. Below, I describe a scenario that I faced.
+	   - e.g. I was getting  NaNs  while running a Faster-RCNN model. I checked all the losses and found that my loss for classification was fine. But, I was getting NaNs just for co-ordinate regressors. Upon digging deep I found that  something like below could be happening:
 
 ```bash
 1. (x,y) of bounding boxes > H / W of the image. 
@@ -82,18 +86,16 @@ print(model.gradients)
 
 
 6. Code Sanity checks 
-
-- Check the conditional logic if/then/else in your code  and be sure they are really doing intended things
-- Deliver clear error/warning messages 
-  - eg. I made a silly mistake where I didnot initilialize a model if the checkpoint is not found. I forgot to add an error message to show the  *folder not found  error*. So, I was unaware if the model is being initialized or not.
-- Have asserts in dataloader to prevent  absolutely ridiculous things from happening
-  - E.g. check if bounding box min and max are the same or if  box coordinates are larger than the  image
+	- Check the conditional logic if/then/else in your code  and be sure they are really doing intended things
+	- Deliver clear error/warning messages 
+		- eg. I made a silly mistake where I didnot initilialize a model if the checkpoint is not found. I forgot to add an error message to show the  *folder not found  error*. So, I was unaware if the model is being initialized or not.
+	- Have asserts in dataloader to prevent  absolutely ridiculous things from happening
+		- E.g. check if bounding box min and max are the same or if  box coordinates are larger than the  image
   
-7. Learn how to use a debugger.  **ipdb or pdb**  for python to trace the points where you keep gettings errors. Its better than using *print* debugging since you can examine each steps. Also, It might come handy to learn some pdb commands.
+7. Learn how to use a debugger.  **ipdb or pdb**  for python to trace the points where you keep getting errors. Its better than using *print* debugging since you can examine each steps. Also, It might come handy to learn some pdb commands.
 
 
-
-##  Resources: 
+##  Resources
 
 1. 37 Reasons why your Neural Network is not working: https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607 
 2. A Recipe for Training Neural Networks http://karpathy.github.io/2019/04/25/recipe/
