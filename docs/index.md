@@ -1,11 +1,7 @@
-# Obsidian Notes
+# Welcome
 
-Publish your public notes with MkDocs
+This blog was published with MkDocs.
 
 ## Hello World!
 
-The `index.md` in the `/docs` folder is the homepage you see here.
-
-The folders in `/docs` appear as the main sections on the navigation bar.
-
-The notes appear as pages within these sections. For example, [[Note 1]] in `Topic 1`
+“We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special.” – Stephen Hawking 
