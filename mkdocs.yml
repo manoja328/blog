@@ -9,42 +9,47 @@ theme:
       - navigation.expand
       - search.suggest
       - search.highlight
-markdown_extensions: 
-  - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
-  - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
-  - nl2br # newline-to-break 
-  - toc:
-      permalink: '#' # heading anchor 
-      slugify: !!python/name:pymdownx.slugs.uslugify # 解决中文标题解析问题
-  - admonition
-  - codehilite:
-      guess_lang: false
-      linenums: false
+
+# Extensions
+markdown_extensions:
   - footnotes
-  - meta
+  # - attr_list
+  - pymdownx.arithmatex:
+      generic: true
+  # - pymdownx.superfences
+  # - pymdownx.details
+  # - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - def_list
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
   - pymdownx.critic
-  - pymdownx.details
-  # - pymdownx.emoji:
-      # emoji_generator: !!python/name:pymdownx.emoji.to_png
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
+  - pymdownx.caret
+  - pymdownx.keys
   - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist
   - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - toc:
+      permalink: true
+
 plugins:
   - search
   - roamlinks
-  - tags
+  - blog
+  - rss:
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js
+  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/mermaid/dist/mermaid.min.js 
