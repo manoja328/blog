@@ -22,21 +22,23 @@ share: true
 		- Mean centering , Whitening etc.
 	- Look for dataset imbalance and biases
 		- Up-sample or Down-sample if you see imbalance
-1. Start by overfitting on few samples by turning the regularization off. If the loss doesnot converge to zero then there  might be a problem.
-2. Start with simple model then gradually increase model complexity.
-3. Is the model underfitting or overfitting?  Simple checks can be done using k-Fold cross validation and seeing train and val losses. Run on small version or mini-validation data especially if you are running huge datasets. Use Tensorboard, weight&biases or other solutions to visualize the  losses.
-   - Underfitting: both train and test errors are high. Solutions:
-	   - Increase model complexity
-   - Overfitting: train error low but test error high. Solutions:
-     - Collect more data
-     - Decrease model complexity eg. fewer units, reduce no. of  hidden layers
-     - Regularize:
-        - Dropout 
-        - Batchnorm 
-        - Early stopping 
-        - L2 weight decay
-        - Ensemble
-4. See that scales of losses are OK
+2. Start by overfitting on few samples by turning the regularization off. If the loss doesnot converge to zero then there  might be a problem.
+3.  Start with simple model then gradually increase model complexity.
+4. Is the model underfitting or overfitting?  Simple checks can be done using k-Fold cross validation and seeing train and val losses. Run on small version or mini-validation data especially if you are running huge datasets. Use Tensorboard, weight&biases or other solutions to visualize the  losses.
+	- Underfitting: both train and test errors are high.
+	- Solutions:
+		- Increase model complexity
+	- Overfitting: train error low but test error high.
+	- Solutions:
+		 - Collect more data
+		 - Decrease model complexity eg. fewer units, reduce no. of  hidden layers
+		 - Regularize:
+			- Dropout 
+			- Batchnorm 
+			- Early stopping 
+			- L2 weight decay
+			- Ensemble
+5. See that scales of losses are OK
    - check for anomaly in gradient values
      -  If you find that gradient are blowing-up then you can perform gradient clipping.
    - check if there are `NaNs `or `Infs` or really weird values. Below, I describe a scenario that I faced.
@@ -97,7 +99,7 @@ print(model.gradients)
 
 ##  Resources
 
-1. 37 Reasons why your Neural Network is not working: https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607 
+1. (37 Reasons why your Neural Network is not working)[https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607]
 2. A Recipe for Training Neural Networks http://karpathy.github.io/2019/04/25/recipe/
 3. https://sebastianraschka.com/faq/docs/nnet-debugging-checklist.html
 4. https://medium.com/machine-learning-world/how-to-debug-neural-networks-manual-dc2a200f10f2
