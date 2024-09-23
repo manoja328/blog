@@ -5,6 +5,7 @@ categories:
   - embedded
 tags:
   - embedded
+  - image_processing
 share: true
 ---
 # Ball and Beam System
