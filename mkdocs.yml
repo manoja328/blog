@@ -39,8 +39,6 @@ plugins:
   - search
   - roamlinks
   - tags
-  - blog:
-      blog_dir: docs
 
 extra_javascript:
   - javascripts/mathjax.js
