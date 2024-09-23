@@ -99,11 +99,11 @@ print(model.gradients)
 
 ##  Resources
 
-1. (37 Reasons why your Neural Network is not working)[https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607]
-2. A Recipe for Training Neural Networks http://karpathy.github.io/2019/04/25/recipe/
-3. https://sebastianraschka.com/faq/docs/nnet-debugging-checklist.html
-4. https://medium.com/machine-learning-world/how-to-debug-neural-networks-manual-dc2a200f10f2
-5. https://blog.cardiogr.am/4-ways-to-debug-your-deep-neural-network-e5edb14a12d7
-6. https://www.semantics3.com/blog/debugging-neural-networks-a-checklist-ca52e11151ec/#inputs
-7. http://210.28.132.67/weixs/project/CNNTricks/CNNTricks.html
-8. https://medium.com/@jonathan_hui/debug-a-deep-learning-network-part-5-1123c20f960d
+1. [37 Reasons why your Neural Network is not working](https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607)
+2. [A Recipe for Training Neural Networks](http://karpathy.github.io/2019/04/25/recipe/)
+3. [Debugging Neural Networks Checklist](https://sebastianraschka.com/faq/docs/nnet-debugging-checklist.html)
+4. [How to Debug Neural Networks (Manual)](https://medium.com/machine-learning-world/how-to-debug-neural-networks-manual-dc2a200f10f2)
+5. [4 Ways to Debug Your Deep Neural Network](https://blog.cardiogr.am/4-ways-to-debug-your-deep-neural-network-e5edb14a12d7)
+6. [Debugging Neural Networks: A Checklist](https://www.semantics3.com/blog/debugging-neural-networks-a-checklist-ca52e11151ec/#inputs)
+7. [CNN Tricks](http://210.28.132.67/weixs/project/CNNTricks/CNNTricks.html)
+8. [Debug a Deep Learning Network - Part 5](https://medium.com/@jonathan_hui/debug-a-deep-learning-network-part-5-1123c20f960d)
