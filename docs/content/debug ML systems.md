@@ -7,7 +7,7 @@ links.mdlinks: true
 links.convert: true
 links.internals: false
 links.nonShared: false
-categories:
+tags:
   - ML
 share: true
 ---

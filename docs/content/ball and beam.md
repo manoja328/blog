@@ -4,7 +4,7 @@ slug: ball-beam
 categories:
   - embedded
 tags:
-  - template
+  - embedded
 share: true
 ---
 # Ball and Beam System
