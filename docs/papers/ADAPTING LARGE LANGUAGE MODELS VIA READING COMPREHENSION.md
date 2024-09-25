@@ -2,7 +2,7 @@
 layout: post
 title: ADAPTING LARGE LANGUAGE MODELS VIA READING COMPREHENSION
 comments: true
-date: 2020-5-10 18:02:00 +0545
+date: 0020-05-10
 links.mdlinks: true
 links.convert: true
 links.internals: false
@@ -12,13 +12,13 @@ tags:
   - paper
 share: true
 ---
-## Takeaways:
+## Takeaways
 - talks about how to adapt LLMs through transformation of raw corpora to series of NLP tasks
 - much better than just feeding raw texts 
 - Just fine-tuning causes a drop in its prompting ability ?? ( Table 1 ) .. not very conclusive of this experiment personally
 - Related to instruction fine-tuning and create IFT data .. older method use more capable LLMs to create such examples ( but has a high cost)
 
-## Example: 
+## Example
 
 Here is the first part of an article about biomedicine: Recent reported evidence indicates that vocal cord carcinoma is evolving similarly to oropharyngeal cancer with an increasing number of patients (...) 
 
@@ -34,7 +34,7 @@ Here is the first part of an article about biomedicine: Recent reported evidence
 - How would you complete the article? This finding further supports...
 
 
-## Hows:
+## Hows
 - Use templates to create such task 
 	- To identify domain-specific words, they  use the SentencePiece tool (Kudo & Richardson, 2018) to build a vocabulary from the target domain corpora.
 	- Then use the domain-specific keywords in the sentence as the input, asking the model to generate a sentence with
@@ -42,11 +42,11 @@ Here is the first part of an article about biomedicine: Recent reported evidence
 - For  “Entailment” if they are connected by the verbalizer Therefore, and as “Contradictory” if connected by However.
 
 ![Pasted image 20240925103354.png](Pasted%20image%2020240925103354.png)
-## Data:
+## Data
 - financial news from May 2022 to May 20232 for over 7, 000 stocks, using the FinGPT codebase
 - PubMed Abstracts and FreeLaw Opinions from the Pile as pre-training corpora for the biomedicine and law domains
 
-## Models:
+## Models
 - MedAlpaca
 - BloomBergGPT
 - LexGPT
