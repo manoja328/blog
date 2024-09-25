@@ -56,4 +56,4 @@ Here is the first part of an article about biomedicine: Recent reported evidence
 Published as a conference paper at ICLR 2024 , 
 ADAPTING LARGE LANGUAGE MODELS VIA READING COMPREHENSION
 Daixuan Cheng, Shaohan Huang∗ & Furu Wei Microsoft Research
-https://huggingface.co/AdaptLLM
+[https://huggingface.co/AdaptLLM](https://huggingface.co/AdaptLLM)
