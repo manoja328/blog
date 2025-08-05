@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Adapting Large Language Models via Reading Comprehension
+title: Adapt LLMs via reading comprehension
 comments: true
-date: 0020-05-10
+date: 2025-07-14
 links.mdlinks: true
 links.convert: true
 links.internals: false
@@ -14,6 +14,7 @@ tags:
 share: true
 ---
 ## Takeaways
+
 - talks about how to adapt LLMs through transformation of raw corpora to series of NLP tasks
 - much better than just feeding raw texts 
 - Just fine-tuning causes a drop in its prompting ability ?? ( Table 1 ) .. not very conclusive of this experiment personally
@@ -44,9 +45,9 @@ Here is the first part of an article about biomedicine: Recent reported evidence
 
 ![Pasted image 20240925103354.png](Pasted%20image%2020240925103354.png)
 ## Data
+
 - financial news from May 2022 to May 20232 for over 7, 000 stocks, using the FinGPT codebase
 - PubMed Abstracts and FreeLaw Opinions from the Pile as pre-training corpora for the biomedicine and law domains
-
 ## Models
 - MedAlpaca
 - BloomBergGPT
